@@ -1,0 +1,155 @@
+.form-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  //height: 100%;
+
+  
+
+}
+
+.form-img {
+  height: 100vh;
+  background-image: linear-gradient(
+    120deg,
+    rgba($primary-color, 0.5) 0%,
+    rgba($dark-color, 0.9) 50%,
+    transparent 20%) , 
+    url(../img/night-city-city-at-night-urban-skyline-cityscape.jpg);
+  background-size: cover;
+  background-position:center;
+ // clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+@media only screen and (max-width: $bp-smallest) {
+  display: none;
+}
+
+@media only screen and (max-width: $bp-small) {
+  display: none;
+  }
+
+}
+
+.form-content {
+  background-color: $light-color;
+  padding: 2rem;
+  @media only screen and (max-width: $bp-smallest) {
+    margin-top:7rem
+  }
+  @media only screen and (max-width: $bp-small) {
+    width: 100vw;
+    height: 100vh;
+    }
+
+  a:hover{
+    text-decoration: underline;
+  }
+  
+}
+
+ .form {
+  margin-top: 6rem;
+  justify-items: center;
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 89%;
+    margin: 0 auto;
+  }
+
+    &__group:not(:last-child) {
+     margin-bottom: 3rem;
+     
+    }
+    
+
+    &__input {
+      font-family: inherit;
+      color: inherit;
+      font-size: 1.4rem;
+      padding: 1rem 1rem;
+      border: 0;
+      outline: 0;
+      border-bottom: 2px solid $dark-color;
+      width: 80%;
+      margin: 0 auto;
+      background-color: $light-color;
+      border-radius: 2px;
+      display: block;
+      transition: all .3s;
+
+      &::-webkit-input-placeholder {
+        color: $color-light-gray;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        border-bottom: 2px solid $primary-color;
+      }
+
+      //Validation
+      &:focus:invalid {
+        border-bottom: 2px solid $danger-color;
+      }
+    }
+
+    .name {
+      margin-left: 3rem;
+      margin-top: .7rem;
+    }
+
+    &__label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-left: 6rem;
+      margin-top: .7rem;
+      display: block;
+      transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+       opacity: 0;
+       visibility: hidden;
+       transform: translateY(-4rem);
+    }
+    &__radio-input {
+      display: none;
+    }
+
+    &__radio-label {
+      cursor: pointer;
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    &__radio-button {
+      height: 2rem;
+      width: 2rem;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 2px solid $dark-color;
+      border-radius: 5px;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 0.25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: $dark-color;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity .2s;
+      }
+    }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+} 

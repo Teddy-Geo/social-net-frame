@@ -1,0 +1,39 @@
+//Buttons
+.btn{
+  &,
+  &:link,
+  &:visited {
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 400;
+   padding: 1.5rem 4rem;
+   display:inline-block;
+   border-radius: .5rem;
+   transition: all .2s;
+   font-size: 1.2rem;
+
+   border: none;
+   cursor: pointer;
+
+   &:hover{
+     transform: translateY(-3px);
+     box-shadow: 0 1rem 2rem rgba($color-black,.5);
+   }
+   
+   &:active{
+     transform: translateY(-1px);
+     box-shadow: 0 .5rem 1rem rgba($color-black,.5);
+   }
+   
+   &.btn--primary{
+     background-color: $primary-color;
+     color: $color-white;
+   }
+  
+   &.btn--dark {
+     background-color:$dark-color;
+     color: $color-white;
+   }
+}
+}
+ 

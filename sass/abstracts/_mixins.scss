@@ -1,0 +1,46 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+  }
+
+  // Margin & Padding
+
+$spaceamounts: (1,2,3,4,5);
+
+@each $space in $spaceamounts {
+  //All around Margin
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+
+  // Vertical Margin
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  //All around Padding
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+
+  // Vertical Padding
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}
+
+// Screen breakpoints variables 
+$bp-largest: 85.375em; //1366px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-small: 48em; //768px
+$bp-smallest: 31.25em;// 500px
